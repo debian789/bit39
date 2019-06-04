@@ -6,13 +6,14 @@ import english from './english.json'
 
 export default class HomeComponent extends React.Component {
     state = {
-        word: ''
+        word: '',
+        number: ''
     }
 
     handlerText(number) {
         if (number && (number > 0 && number < 2041)) {
             console.log(english[number])
-            this.setState({word: english[number]})
+            this.setState({word: english[number], number})
 
             setTimeout(() => {
                 // this.setState({word: ''  })
@@ -36,7 +37,8 @@ export default class HomeComponent extends React.Component {
                onChangeText = { this.handlerText.bind(this)}
                />
 
-               <Text style={{flex:2, padding: 20, fontSize: 30, textAlign:"center", justifyContent:'center'}}>{this.state.word}</Text>
+               <Text style={{ paddingTop: 30, fontSize: 40, textAlign:"center", justifyContent:'center'}}>{this.state.word}</Text>
+               <Text style={{ padding: 25, fontSize: 20, textAlign:"center", }}>{this.state.number}</Text>
             </View>
         )
     }
