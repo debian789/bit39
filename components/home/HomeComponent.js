@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text} from 'react-native'
 import {TextField} from 'react-native-material-textfield'
-import english from './english.json'
+import english from '../../constants/english.json'
 
 
 export default class HomeComponent extends React.Component {
@@ -12,8 +12,8 @@ export default class HomeComponent extends React.Component {
 
     handlerText(number) {
         if (number && (number > 0 && number < 2041)) {
-            console.log(english[number])
-            this.setState({word: english[number], number})
+            console.log(english[number -1 ])
+            this.setState({word: english[number -1 ][number], number: number })
 
             setTimeout(() => {
                 // this.setState({word: ''  })
