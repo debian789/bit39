@@ -4,7 +4,7 @@ import {TextField} from 'react-native-material-textfield'
 import english from '../../constants/english.json'
 
 
-export default class HomeComponent extends React.Component {
+export default class CodesComponent extends React.Component {
     state = {
         word: '',
         number: ''

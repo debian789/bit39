@@ -1,63 +1,85 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from "react";
+import { Platform } from "react-native";
+import {
+  createStackNavigator,
+  createMaterialTopTabNavigator
+} from "react-navigation";
 
-import TabBarIcon from '../components/TabBarIcon';
+import TabBarIcon from "../components/TabBarIcon";
 // import HomeScreen from '../screens/HomeScreen';
-import HomeComponent from '../components/home/HomeComponent'
-import WordsComponent from '../components/words/WordsComponent'
-//import LinksScreen from '../screens/LinksScreen';
+import CodesComponent from "../components/codes/CodesComponent";
+import WordsComponent from "../components/words/WordsComponent";
+//import WordsScreen from '../screens/WordsScreen';
 //import SettingsScreen from '../screens/SettingsScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeComponent,
-});
+const codes = createStackNavigator(
+  {
+    Codes: CodesComponent
+  },
+  {
+    initialRouteName: "Codes",
+    defaultNavigationOptions: {
+      header: null
+    }
+  }
+);
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Codigo',
+codes.navigationOptions = {
+  tabBarLabel: "Codigo",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+        Platform.OS === "ios"
+          ? `ios-information-circle${focused ? "" : "-outline"}`
+          : "md-information-circle"
       }
     />
-  ),
+  )
 };
 
-const LinksStack = createStackNavigator({
-  Links: WordsComponent,
+const words = createStackNavigator({
+  Words: WordsComponent
+},
+{
+  initialRouteName: "Words",
+  defaultNavigationOptions: {
+    header: null
+  }
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Palabras',
+words.navigationOptions = {
+  tabBarLabel: "Palabras",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={Platform.OS === "ios" ? "ios-link" : "md-link"}
     />
-  ),
+  )
 };
 
-/*
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
+const welcome = createStackNavigator(
+  {
+    welcome: createMaterialTopTabNavigator(
+      {
+        codes,
+        words
+      },
+      {
+        initialRouteName: "codes",
+        tabBarPosition: "top",
+        showIcon: true,
+        lazy: true
+      }
+    )
+  },
+  {
+    initialRouteName: "welcome",
+    defaultNavigationOptions: {
+      // header: null,
+    }
+  }
+);
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
-*/
-export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
- // SettingsStack,
-});
+export default welcome;
+
