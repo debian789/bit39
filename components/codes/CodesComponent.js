@@ -75,6 +75,48 @@ export default class CodesComponent extends React.Component {
     }
   }
 
+  containerKey() {
+      if (this.state.number3) {
+          return (
+            <ScrollView style={CodesStyle.containerScroll}>
+              <View style={CodesStyle.item}>
+                <Icon style={CodesStyle.icons} name="md-key" size={25} />
+    
+                <Text style={CodesStyle.text1}>{this.state.word1}</Text>
+                <Text style={CodesStyle.text2}>{this.state.number1}</Text>
+              </View>
+              <View style={CodesStyle.item}>
+                <Icon style={CodesStyle.icons} name="md-key" size={25} />
+    
+                <Text style={CodesStyle.text1}>{this.state.word2}</Text>
+                <Text style={CodesStyle.text2}>{this.state.number2}</Text>
+              </View>
+              <View style={CodesStyle.item}>
+                <Icon style={CodesStyle.icons} name="md-key" size={25} />
+    
+                <Text style={CodesStyle.text1}>{this.state.word3}</Text>
+                <Text style={CodesStyle.text2}>{this.state.number3}</Text>
+              </View>
+              <View style={CodesStyle.item}>
+                <Icon style={CodesStyle.icons} name="md-key" size={25} />
+    
+                <Text style={CodesStyle.text1}>{this.state.word4}</Text>
+                <Text style={CodesStyle.text2}>{this.state.number4}</Text>
+              </View>
+              <View style={CodesStyle.item}>
+                <Icon style={CodesStyle.icons} name="md-key" size={25} />
+    
+                <Text style={CodesStyle.text1}>{this.state.word5}</Text>
+                <Text style={CodesStyle.text2}>{this.state.number5}</Text>
+              </View>
+            </ScrollView>)
+      } else {
+          return ( <View style={CodesStyle.itemLoad}>
+            <Icon style={CodesStyle.iconsLoad} name="md-list" size={325} />
+            </View>)
+      }
+  }
+
   render() {
     return (
       <View style={CodesStyle.container}>
@@ -86,38 +128,7 @@ export default class CodesComponent extends React.Component {
           }}
           onChangeText={this.handlerText.bind(this)}
         />
-        <ScrollView style={CodesStyle.containerScroll}>
-          <View style={CodesStyle.item}>
-            <Icon style={CodesStyle.icons} name="md-key" size={25} />
-
-            <Text style={CodesStyle.text1}>{this.state.word1}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number1}</Text>
-          </View>
-          <View style={CodesStyle.item}>
-            <Icon style={CodesStyle.icons} name="md-key" size={25} />
-
-            <Text style={CodesStyle.text1}>{this.state.word2}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number2}</Text>
-          </View>
-          <View style={CodesStyle.item}>
-            <Icon style={CodesStyle.icons} name="md-key" size={25} />
-
-            <Text style={CodesStyle.text1}>{this.state.word3}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number3}</Text>
-          </View>
-          <View style={CodesStyle.item}>
-            <Icon style={CodesStyle.icons} name="md-key" size={25} />
-
-            <Text style={CodesStyle.text1}>{this.state.word4}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number4}</Text>
-          </View>
-          <View style={CodesStyle.item}>
-            <Icon style={CodesStyle.icons} name="md-key" size={25} />
-
-            <Text style={CodesStyle.text1}>{this.state.word5}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number5}</Text>
-          </View>
-        </ScrollView>
+        {this.containerKey()}
       </View>
     );
   }

@@ -5,7 +5,8 @@ export default StyleSheet.create({
     padding: 20
   },
   containerScroll: {
-    flex: 1
+    flex: 1,
+    marginTop: 30,
   },
   item: {
     marginTop: 4,
@@ -17,12 +18,15 @@ export default StyleSheet.create({
     justifyContent: "space-between"
   },
 
-  itemSub: {
+  itemLoad: {
+    marginTop: 30,
+    paddingBottom: 4,
     flexDirection: "row",
-    borderBottomColor: "#ccc",
-    borderBottomWidth: 1,
-    justifyContent: "space-between"
+    textAlign: "center",
+    justifyContent: "center"
   },
+
+
   icons: {
     color: "#F1C40F",
     borderColor: "red",
@@ -32,6 +36,18 @@ export default StyleSheet.create({
     marginRight: 5,
     flex: 1
   },
+
+  iconsLoad: {
+    color: "#eeeeee",
+    borderColor: "red",
+    textAlign: "center",
+    justifyContent: "center",
+    paddingTop: 6,
+    marginRight: 5,
+    flex: 1
+  },
+
+
   text1: {
     flex: 7,
     fontSize: 25,
