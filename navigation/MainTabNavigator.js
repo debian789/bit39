@@ -68,7 +68,7 @@ const welcome = createStackNavigator(
       {
         initialRouteName: "codes",
         tabBarPosition: "bottom",
-      //  showIcon: true,
+        showIcon: true,
         lazy: true
       }
     )
@@ -77,7 +77,6 @@ const welcome = createStackNavigator(
     initialRouteName: "welcome",
     defaultNavigationOptions: {
       title: 'BIP 39',
-      // header: null,
       headerRight: (
         <Button
           onPress={() => alert('This is a button!')}
