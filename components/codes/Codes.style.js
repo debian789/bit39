@@ -12,7 +12,7 @@ export default StyleSheet.create({
     marginTop: 4,
     paddingBottom: 4,
     flexDirection: "row",
-    borderBottomColor: "#ccc",
+    borderBottomColor: "#eee",
     borderBottomWidth: 1,
     textAlign: "center",
     justifyContent: "space-between"

@@ -2,7 +2,8 @@ import React from 'react'
 import {View, Text, FlatList} from 'react-native'
 import {TextField} from 'react-native-material-textfield'
 import english from '../../constants/english.json'
-
+import WordsStyle from './Words.style'
+import Icon from "@expo/vector-icons/Ionicons";
 
 export default class WordsComponent extends React.Component {
 
@@ -11,59 +12,20 @@ export default class WordsComponent extends React.Component {
             number: ''
         }
     
-        handlerText(textSearch) {
+        handlerText(textSearch, event) {
             const textValue = textSearch.trim().toLowerCase()
-console.log(textSearch.toLowerCase())
-         //   const wordRegExp = new RegExp(`^${textSearch.toLowerCase()}([a-z])\w+`, 'g')
-
-            const wordRegExp = new RegExp(`^${textValue}`)
-            
-            if (english ) {
-                
-               let data = english
-               .filter((item, index) => {
-                  // console.log(item)
-                  /*if (item[index + 1] == 'source') {
-                       console.log('------------')
-                       console.log(item)
-                       console.log(wordRegExp.test(item[index +1].trim()))
-                  }*/
-                  return item[index +1].trim().includes(textValue)
-                  /// return wordRegExp.test(item[index +1].trim())
-                })
-
-              .map((item) => {
-                  // console.log(item)
-                  // console.log('*****')
-                   return {'key': Object.values(item), code: Object.keys(item)}
-               })
-
-             //   console.log(data)
-
-                this.setState({words: data})
-
-
-              console.log(data)
-
+            if (english ) {        
+                    let data = english
+                    .filter((item, index) => {
+                       return item.word.trim().includes(textValue)
+                     })
+                    this.setState({words: data})               
             } 
-          
-
-           /* if (number && (number > 0 && number < 2041)) {
-                console.log(english[number])
-                this.setState({word: english[number], number})
-    **
-                setTimeout(() => {
-                    this.textInput.clear()
-                 }, 5000)
-            } else {
-            }*/
-    
-            
         }
     
         render() {
             return(
-                <View style={{flex: 1, padding: 20}}>
+                <View style={WordsStyle.container}>
                    <TextField 
                    label='Palabras'
                    ref={input => { this.textInput = input}}
@@ -71,18 +33,22 @@ console.log(textSearch.toLowerCase())
                    onChangeText = { this.handlerText.bind(this)}
                    />
 
-                   <FlatList 
-                   
+                   <FlatList                   
                    data = {this.state.words}
-
                    renderItem={
-                       ({item}) => <Text> {item.key} -  {item.code}</Text>
+                       ({item}) => {
+                           return ( 
+                            <View style={WordsStyle.item}>
+                            <Icon style={WordsStyle.icons} name="md-key" size={25} />
+                
+                            <Text style={WordsStyle.text1}>{item.word}</Text>
+                            <Text style={WordsStyle.text2}>{item.id}</Text>
+                          </View>                           
+                           )
+                       }
                    }
+                   keyExtractor={(item, index) => index.toString()}
                    />
-
-    
-                   <Text style={{ paddingTop: 30, fontSize: 40, textAlign:"center", justifyContent:'center'}}>{this.state.word}</Text>
-                   <Text style={{ padding: 25, fontSize: 20, textAlign:"center", }}>{this.state.number}</Text>
                 </View>
             )
         }
