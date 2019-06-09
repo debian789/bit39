@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform } from "react-native";
+import { Platform, Button } from "react-native";
 import {
   createStackNavigator,
   createMaterialTopTabNavigator
@@ -67,8 +67,8 @@ const welcome = createStackNavigator(
       },
       {
         initialRouteName: "codes",
-        tabBarPosition: "top",
-        showIcon: true,
+        tabBarPosition: "bottom",
+      //  showIcon: true,
         lazy: true
       }
     )
@@ -76,7 +76,23 @@ const welcome = createStackNavigator(
   {
     initialRouteName: "welcome",
     defaultNavigationOptions: {
+      title: 'BIP 39',
       // header: null,
+      headerRight: (
+        <Button
+          onPress={() => alert('This is a button!')}
+          title="Info"
+          color="#fff"
+        />
+      ),
+      headerStyle: {
+        backgroundColor: '#2196f3',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      shadowColor: 'transparent' 
     }
   }
 );
