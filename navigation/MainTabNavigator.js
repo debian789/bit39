@@ -1,16 +1,13 @@
 import React from "react";
-import { Platform, Button } from "react-native";
+import { Platform } from "react-native";
 import {
   createStackNavigator,
   createMaterialTopTabNavigator
 } from "react-navigation";
-
+import Icon from "@expo/vector-icons/Ionicons";
 import TabBarIcon from "../components/TabBarIcon";
-// import HomeScreen from '../screens/HomeScreen';
 import CodesComponent from "../components/codes/CodesComponent";
 import WordsComponent from "../components/words/WordsComponent";
-//import WordsScreen from '../screens/WordsScreen';
-//import SettingsScreen from '../screens/SettingsScreen';
 
 const codes = createStackNavigator(
   {
@@ -38,15 +35,17 @@ codes.navigationOptions = {
   )
 };
 
-const words = createStackNavigator({
-  Words: WordsComponent
-},
-{
-  initialRouteName: "Words",
-  defaultNavigationOptions: {
-    header: null
+const words = createStackNavigator(
+  {
+    Words: WordsComponent
+  },
+  {
+    initialRouteName: "Words",
+    defaultNavigationOptions: {
+      header: null
+    }
   }
-});
+);
 
 words.navigationOptions = {
   tabBarLabel: "Palabras",
@@ -76,25 +75,45 @@ const welcome = createStackNavigator(
   {
     initialRouteName: "welcome",
     defaultNavigationOptions: {
-      title: 'BIP 39',
+      title: "BIP 39",
       headerRight: (
-        <Button
-          onPress={() => alert('This is a button!')}
-          title="Info"
-          color="#fff"
+        <Icon
+          style={{
+            color: "white",
+            textAlign: "center",
+            justifyContent: "center",
+            paddingTop: 6,
+            marginRight: 15,
+            flex: 1
+          }}
+          name="md-help-circle"
+          size={25}
+        />
+      ),
+      headerLeft: (
+        <Icon
+          style={{
+            color: "white",
+            textAlign: "center",
+            justifyContent: "center",
+            paddingTop: 6,
+            marginLeft: 15,
+            flex: 1
+          }}
+          name="md-key"
+          size={25}
         />
       ),
       headerStyle: {
-        backgroundColor: '#2196f3',
+        backgroundColor: "#2196f3"
       },
-      headerTintColor: '#fff',
+      headerTintColor: "#fff",
       headerTitleStyle: {
-        fontWeight: 'bold',
+        fontWeight: "bold"
       },
-      shadowColor: 'transparent' 
+      shadowColor: "transparent"
     }
   }
 );
 
 export default welcome;
-
