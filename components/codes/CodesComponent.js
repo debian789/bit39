@@ -133,24 +133,24 @@ export default class CodesComponent extends React.Component {
         <ScrollView style={CodesStyle.containerScroll}>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
-            <Text style={CodesStyle.text1}>{this.state.word1}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number1}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word1}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number1}</Text>
           </View>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
-            <Text style={CodesStyle.text1}>{this.state.word2}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number2}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word2}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number2}</Text>
           </View>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
-            <Text style={CodesStyle.text1}>{this.state.word3}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number3}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word3}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number3}</Text>
           </View>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
 
-            <Text style={CodesStyle.text1}>{this.state.word4}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number4}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word4}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number4}</Text>
           </View>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
@@ -161,26 +161,26 @@ export default class CodesComponent extends React.Component {
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
 
-            <Text style={CodesStyle.text1}>{this.state.word6}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number6}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word6}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number6}</Text>
           </View>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
 
-            <Text style={CodesStyle.text1}>{this.state.word7}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number7}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word7}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number7}</Text>
           </View>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
 
-            <Text style={CodesStyle.text1}>{this.state.word8}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number8}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word8}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number8}</Text>
           </View>
           <View style={CodesStyle.item}>
             <Icon style={CodesStyle.icons} name="md-key" size={25} />
 
-            <Text style={CodesStyle.text1}>{this.state.word9}</Text>
-            <Text style={CodesStyle.text2}>{this.state.number9}</Text>
+            <Text style={CodesStyle.text3}>{this.state.word9}</Text>
+            <Text style={CodesStyle.text4}>{this.state.number9}</Text>
           </View>
         </ScrollView>
       );

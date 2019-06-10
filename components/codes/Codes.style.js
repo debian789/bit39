@@ -59,5 +59,21 @@ export default StyleSheet.create({
     fontSize: 25,
     textAlign: "right",
     justifyContent: "center"
+  },
+
+  text3: {
+    color: '#D7D7D7',
+    flex: 7,
+    fontSize: 25,
+    textAlign: "left",
+    justifyContent: "center"
+  },
+  text4: {
+    color: '#D7D7D7',
+    flex: 2,
+    fontSize: 25,
+    textAlign: "right",
+    justifyContent: "center"
   }
+
 });
