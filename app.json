@@ -24,6 +24,11 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.bip39.com",
+      "permissions": [],
+      "versionCode": 2
     }
   }
 }
