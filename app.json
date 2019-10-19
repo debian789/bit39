@@ -3,7 +3,7 @@
     "name": "Bip 39",
     "slug": "Bip39",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
+    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android"
